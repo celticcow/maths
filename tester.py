@@ -40,6 +40,47 @@ def ask_divide():
         return(0)
 #end ask_divide
 
+def ask_add():
+    num1 = int(random.randint(0, 10))
+    num2 = int(random.randint(0, 10))
+
+    sum = num1 + num2
+
+    print("please ADD : ", end="")
+    print(str(num1) + " + " + str(num2) + " = ")
+
+    user_answer = int(input())
+
+    if(user_answer == sum):
+        print("CORRECT")
+        return(1)
+    else:
+        print("sorry, the correct answer is : " + str(sum))
+        return(0)
+    
+#end of ask_add
+
+def ask_subtract():
+    num1 = int(random.randint(0, 10))
+    num2 = int(random.randint(0, 10))
+
+    if(num1 < num2):
+        num1, num2 = num2, num1
+    diff = num1 - num2
+
+    print("pls SUBTRACT : ", end="")
+    print(str(num1) + " - " + str(num2) + " = ")
+
+    user_answer = int(input())
+
+    if(user_answer == diff):
+        print("CORRECT")
+        return(1)
+    else:
+        print("sorry, the correct answer is : " + str(diff))
+        return(0)
+#end of ask_subtract
+
 def main():
     print("welcome to maths")
 
@@ -47,16 +88,26 @@ def main():
     some of these will become toggle as we test more
     and advance
     """
-    mode = "multiply"
+    mode = "russell"
+    #mode = "phillip"
 
     grade = 0
     for i in range(10):
-        print(i)
-        #grade += ask_multiply()
-        #grade += ask_divide()
+        if(mode == "russell"):
+            grade += ask_multiply()
+        else:
+            grade += ask_add()
 
     print("you got " + str(grade) + " out of 10")
 
+    grade = 0
+    for i in range(10):
+        if(mode == "russell"):
+            grade += ask_divide()
+        else:
+            grade += ask_subtract()
+
+    print("you got " + str(grade) + " out of 10")
     
 #end of main
 
