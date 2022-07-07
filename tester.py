@@ -11,7 +11,10 @@ def ask_multiply():
 
     answer = num1 * num2
 
-    user_answer = int(input())
+    try:
+        user_answer = int(input())
+    except:
+        user_answer = -1
 
     if(user_answer == answer):
         print("CORRECT")
@@ -30,7 +33,10 @@ def ask_divide():
     print("please Divide : ", end="")
     print(str(product) + " / " + str(num1))
 
-    user_answer = int(input())
+    try:
+        user_answer = int(input())
+    except:
+        user_answer = -1
 
     if(user_answer == num2):
         print("CORRECT")
@@ -49,7 +55,11 @@ def ask_add():
     print("please ADD : ", end="")
     print(str(num1) + " + " + str(num2) + " = ")
 
-    user_answer = int(input())
+    try:
+        user_answer = int(input())
+    except:
+        #we have a value error
+        user_answer = -1
 
     if(user_answer == sum):
         print("CORRECT")
@@ -71,7 +81,10 @@ def ask_subtract():
     print("pls SUBTRACT : ", end="")
     print(str(num1) + " - " + str(num2) + " = ")
 
-    user_answer = int(input())
+    try:
+        user_answer = int(input())
+    except:
+        user_answer = -1
 
     if(user_answer == diff):
         print("CORRECT")
@@ -89,7 +102,7 @@ def main():
     and advance
     """
     mode = "russell"
-    #mode = "phillip"
+    ###mode = "phillip"
 
     grade = 0
     for i in range(10):
