@@ -2,9 +2,9 @@
 
 import random
 
-def ask_multiply():
-    num1 = int(random.randint(0, 10))
-    num2 = int(random.randint(0, 10))
+def ask_multiply(upper = 10):
+    num1 = int(random.randint(0, upper))
+    num2 = int(random.randint(0, upper))
 
     print("please Multiply : ", end="")
     print(str(num1) + " * " + str(num2) + " = ")
@@ -24,9 +24,9 @@ def ask_multiply():
         return(0)
 #end of ask_multipy
 
-def ask_divide():
-    num1 = int(random.randint(1, 10))
-    num2 = int(random.randint(1, 10))
+def ask_divide(upper = 10):
+    num1 = int(random.randint(1, upper))
+    num2 = int(random.randint(1, upper))
 
     product = num1 * num2
 
@@ -46,9 +46,9 @@ def ask_divide():
         return(0)
 #end ask_divide
 
-def ask_add():
-    num1 = int(random.randint(0, 10))
-    num2 = int(random.randint(0, 10))
+def ask_add(upper = 10):
+    num1 = int(random.randint(0, upper))
+    num2 = int(random.randint(0, upper))
 
     sum = num1 + num2
 
@@ -70,9 +70,9 @@ def ask_add():
     
 #end of ask_add
 
-def ask_subtract():
-    num1 = int(random.randint(0, 10))
-    num2 = int(random.randint(0, 10))
+def ask_subtract(upper = 10):
+    num1 = int(random.randint(0, upper))
+    num2 = int(random.randint(0, upper))
 
     if(num1 < num2):
         num1, num2 = num2, num1
@@ -101,15 +101,15 @@ def main():
     some of these will become toggle as we test more
     and advance
     """
-    mode = "russell"
-    ###mode = "phillip"
+    #mode = "russell"
+    mode = "phillip"
 
     grade = 0
     for i in range(10):
         if(mode == "russell"):
             grade += ask_multiply()
         else:
-            grade += ask_add()
+            grade += ask_add(5)
 
     print("you got " + str(grade) + " out of 10")
 
@@ -118,7 +118,7 @@ def main():
         if(mode == "russell"):
             grade += ask_divide()
         else:
-            grade += ask_subtract()
+            grade += ask_subtract(5)
 
     print("you got " + str(grade) + " out of 10")
     
