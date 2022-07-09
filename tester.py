@@ -11,10 +11,13 @@ def ask_multiply(upper = 10):
 
     answer = num1 * num2
 
-    try:
-        user_answer = int(input())
-    except:
-        user_answer = -1
+    while(True):
+        try:
+            user_answer = int(input())
+            break
+        except (ValueError, TypeError):
+            print("invalid input pls type a number")
+            pass
 
     if(user_answer == answer):
         print("CORRECT")
@@ -33,10 +36,13 @@ def ask_divide(upper = 10):
     print("please Divide : ", end="")
     print(str(product) + " / " + str(num1))
 
-    try:
-        user_answer = int(input())
-    except:
-        user_answer = -1
+    while(True):
+        try:
+            user_answer = int(input())
+            break
+        except (ValueError, TypeError):
+            print("invalid input pls type a number")
+            pass
 
     if(user_answer == num2):
         print("CORRECT")
@@ -83,10 +89,13 @@ def ask_subtract(upper = 10):
     print("pls SUBTRACT : ", end="")
     print(str(num1) + " - " + str(num2) + " = ")
 
-    try:
-        user_answer = int(input())
-    except:
-        user_answer = -1
+    while(True):
+        try:
+            user_answer = int(input())
+            break
+        except (ValueError, TypeError):
+            print("invalid input pls type a number")
+            pass
 
     if(user_answer == diff):
         print("CORRECT")
