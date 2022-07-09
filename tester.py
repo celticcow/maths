@@ -55,12 +55,14 @@ def ask_add(upper = 10):
     print("please ADD : ", end="")
     print(str(num1) + " + " + str(num2) + " = ")
 
-    try:
-        user_answer = int(input())
-    except:
-        #we have a value error
-        user_answer = -1
-
+    while(True):
+        try:
+            user_answer = int(input())
+            break
+        except (ValueError, TypeError):
+            print("invalid input pls type a number")
+            pass
+        
     if(user_answer == sum):
         print("CORRECT")
         return(1)
@@ -104,23 +106,23 @@ def main():
     #mode = "russell"
     mode = "phillip"
 
-    grade = 0
+    grade0 = 0
     for i in range(10):
         if(mode == "russell"):
-            grade += ask_multiply()
+            grade0 += ask_multiply()
         else:
-            grade += ask_add(5)
+            grade0 += ask_add(5)
 
-    print("you got " + str(grade) + " out of 10")
-
-    grade = 0
+    grade1 = 0
     for i in range(10):
         if(mode == "russell"):
-            grade += ask_divide()
+            grade1 += ask_divide()
         else:
-            grade += ask_subtract(5)
+            grade1 += ask_subtract(5)
 
-    print("you got " + str(grade) + " out of 10")
+    print("you got " + str(grade0) + " out of 10")
+    print("you got " + str(grade1) + " out of 10")
+
     
 #end of main
 
